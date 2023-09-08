@@ -1,0 +1,101 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url('./assets/fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+  src: url('./assets/fonts/Roboto-Bold.ttf') format('truetype');
+}
+
+:root {
+  --tomato: hsl(4, 100%, 67%);
+
+  --darkSlateGrey: hsl(234, 29%, 20%);
+  --charcoalGrey: hsl(235, 18%, 26%);
+  --grey: hsl(231, 7%, 60%);
+  --white: hsl(0, 0%, 100%);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto;
+  font-size: 1rem;
+  color: var(--charcoalGrey);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  padding: 0 30px;
+  & h1 {
+    font-size: 2.375rem;
+    font-family: Roboto-Bold;
+    color: var(--darkSlateGrey);
+  }
+  & ul {
+    list-style: none;
+    & li {
+      padding-bottom: 15px;
+      padding-left: 2.125rem;
+      background-image: url('./assets/images/icon-list.svg');
+      background-repeat: no-repeat;
+    }
+  }
+  & .email-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+    & label {
+      font-size: 0.78rem;
+      font-weight: bold;
+      color: var(--darkSlateGrey);
+    }
+    & input {
+      color: var(--grey);
+      font-size: 1.0625rem;
+      border: 1px solid var(--grey);
+      border-radius: 10px;
+      padding: 17px;
+      outline: none;
+    }
+    & input:focus {
+      border: 1px solid var(--tomato);
+      color: var(--tomato);
+    }
+    & input:focus::placeholder {
+      color: var(--tomato);
+    }
+    & button {
+      font-size: 1.0313rem;
+      font-weight: bold;
+      color: var(--white);
+      background-color: var(--darkSlateGrey);
+      border-radius: 10px;
+      margin-top: 15px;
+      padding: 20px;
+    }
+    & .validation-email {
+      display: flex;
+      justify-content: space-between;
+      & label:nth-child(2) {
+        display: none;
+        color: var(--tomato);
+      }
+    }
+  }
+}
