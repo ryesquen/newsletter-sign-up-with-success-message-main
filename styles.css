@@ -16,6 +16,7 @@
   --grey: hsl(231, 7%, 60%);
   --white: hsl(0, 0%, 100%);
   --backgroundInput: #ffe8e6;
+  --bColor: #e73d7c;
 }
 
 * {
@@ -36,9 +37,14 @@ main {
   gap: 20px;
 }
 
+.sombra {
+  box-shadow: 5px 5px 10px var(--tomato);
+}
+
 .image-section {
   & img {
-    width: 100%;
+    min-width: 100%;
+    display: block;
   }
 }
 
@@ -106,6 +112,22 @@ main {
         display: none;
         color: var(--tomato);
       }
+    }
+  }
+}
+
+@media (width >=1024px) {
+  main {
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+    padding: 2.5rem;
+  }
+
+  .image-section {
+    height: 100%;
+    & img {
+      content: url('./assets/images/illustration-sign-up-desktop.svg');
     }
   }
 }

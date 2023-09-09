@@ -4,15 +4,19 @@ const regEmail =
 const button = document.querySelector('button')
 const input = document.querySelector('input')
 const emailValid = document.getElementById('email-valid')
+let esValid = false
 
 const valid = (email) => {
-  const esValid = regEmail.test(email)
+  esValid = regEmail.test(email)
   esValid
-    ? ((button.style.backgroundImage =
-        'linear-gradient(90deg, var(--tomato), var(--tomato))'),
-      (emailValid.style.display = 'none'))
-    : ((button.style.backgroundImage = 'none'),
-      (emailValid.style.display = 'block'))
+    ? (console.log('esValid'),
+      (button.style.backgroundImage =
+        'linear-gradient(45deg, var(--tomato), var(--bColor))'),
+      (emailValid.style.display = 'none'),
+      button.classList.add('sombra'))
+    : (console.log('!esValid'),
+      (emailValid.style.display = 'block'),
+      button.classList.remove('sombra'))
 }
 
 const debounce = (func, wait) => {
@@ -27,15 +31,16 @@ const debounce = (func, wait) => {
   }
 }
 
-button.addEventListener('click', () => {
-    
-})
+button.addEventListener('click', () => {})
 
 input.addEventListener(
   'input',
   debounce(({ target }) => {
     if (target.value !== '') {
       valid(target.value)
-    } else button.style.backgroundImage = 'none'
+    } else {
+      button.classList.remove('sombra')
+      button.style.backgroundImage = 'none'
+    }
   }, 500)
 )
