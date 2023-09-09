@@ -9,8 +9,7 @@ let esValid = false
 const valid = (email) => {
   esValid = regEmail.test(email)
   esValid
-    ? (console.log('esValid'),
-      (button.style.backgroundImage =
+    ? ((button.style.backgroundImage =
         'linear-gradient(45deg, var(--tomato), var(--bColor))'),
       (emailValid.style.display = 'none'),
       button.classList.add('sombra'))
