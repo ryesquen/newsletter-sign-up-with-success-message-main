@@ -27,7 +27,9 @@ const debounce = (func, wait) => {
   }
 }
 
-button.addEventListener('click', () => {})
+button.addEventListener('click', () => {
+    
+})
 
 input.addEventListener(
   'input',
